@@ -2,10 +2,10 @@
 
 namespace Railken\LaraOre\Tax;
 
+use Illuminate\Support\Facades\Config;
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\Tokens;
-use Illuminate\Support\Facades\Config;
 
 class TaxManager extends ModelManager
 {
@@ -15,7 +15,7 @@ class TaxManager extends ModelManager
      * @var string
      */
     public $entity = Tax::class;
-    
+
     /**
      * List of all attributes.
      *
@@ -28,7 +28,7 @@ class TaxManager extends ModelManager
         Attributes\UpdatedAt\UpdatedAtAttribute::class,
         Attributes\DeletedAt\DeletedAtAttribute::class,
         Attributes\Description\DescriptionAttribute::class,
-        Attributes\Calculator\CalculatorAttribute::class
+        Attributes\Calculator\CalculatorAttribute::class,
     ];
 
     /**
