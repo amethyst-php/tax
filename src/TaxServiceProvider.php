@@ -20,8 +20,8 @@ class TaxServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
 
-        config(['ore.user.permission.managers' => array_merge(Config::get('ore.user.permission.managers'), [
-            // Railken\LaraOre\RecurringService\TaxManager::class,
+        config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
+            Railken\LaraOre\Tax\TaxManager::class,
         ])]);
     }
 
