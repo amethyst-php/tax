@@ -14,21 +14,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     }
 
     /**
-     * Retrieve correct Bag of parameters.
-     *
-     * @return Bag
-     */
-    public function getParameters()
-    {
-        $bag = new Bag();
-        $bag->set('name', 'Ultra tax-'.microtime(true));
-        $bag->set('description', 'Give me');
-        $bag->set('calculator', 'x*0.22');
-
-        return $bag;
-    }
-
-    /**
      * Setup the test environment.
      */
     public function setUp()

@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\Tax;
 
 use Illuminate\Support\Facades\Config;
 use Railken\LaraOre\Support\Testing\ApiTestableTrait;
+use Railken\LaraOre\Tax\TaxFaker;
 
 class ApiTest extends BaseTest
 {
@@ -27,6 +28,6 @@ class ApiTest extends BaseTest
     public function testSuccessCommon()
     {
         $this->signIn();
-        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters());
+        $this->commonTest($this->getBaseUrl(), TaxFaker::make());
     }
 }
