@@ -21,7 +21,7 @@ class TaxServiceProvider extends ServiceProvider
         $this->loadRoutes();
 
         config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
-            Railken\LaraOre\Tax\TaxManager::class,
+            \Railken\LaraOre\Tax\TaxManager::class,
         ])]);
     }
 
