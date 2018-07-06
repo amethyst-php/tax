@@ -33,7 +33,6 @@ class TaxServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(\Railken\Laravel\Manager\ManagerServiceProvider::class);
-        $this->app->register(\Railken\LaraOre\UserServiceProvider::class);
         $this->app->register(\Railken\LaraOre\ApiServiceProvider::class);
         $this->mergeConfigFrom(__DIR__.'/../config/ore.tax.php', 'ore.tax');
     }
