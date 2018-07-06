@@ -8,7 +8,7 @@ use Faker\Factory;
 class TaxFaker
 {
     /**
-     * @return array
+     * @return \Railken\Bag
      */
     public static function make()
     {
