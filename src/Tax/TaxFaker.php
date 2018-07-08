@@ -4,13 +4,19 @@ namespace Railken\LaraOre\Tax;
 
 use Railken\Bag;
 use Faker\Factory;
+use Railken\Laravel\Manager\BaseFaker;
 
-class TaxFaker
+class TaxFaker extends BaseFaker
 {
+    /**
+     * @var string
+     */
+    protected $manager = TaxManager::class;
+
     /**
      * @return \Railken\Bag
      */
-    public static function make()
+    public function parameters()
     {
         $faker = Factory::create();
 
