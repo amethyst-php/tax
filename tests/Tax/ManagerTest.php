@@ -3,8 +3,8 @@
 namespace Railken\LaraOre\Tests\Tax;
 
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
-use Railken\LaraOre\Tax\TaxManager;
 use Railken\LaraOre\Tax\TaxFaker;
+use Railken\LaraOre\Tax\TaxManager;
 
 class ManagerTest extends BaseTest
 {

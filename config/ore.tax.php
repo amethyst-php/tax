@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Table
@@ -13,14 +12,23 @@ return [
     'table' => 'ore_taxes',
 
     'attributes' => [
-
     ],
 
-    'router' => [
-        'prefix'      => '/admin/taxes',
-        'middlewares' => [
-            \Railken\LaraOre\RequestLoggerMiddleware::class,
-            'auth:api',
+    /*
+    |--------------------------------------------------------------------------
+    | Http configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the routes
+    |
+    */
+    'http' => [
+        'admin' => [
+            'enabled'    => true,
+            'controller' => Railken\LaraOre\Http\Controllers\Admin\TaxesController::class,
+            'router'     => [
+                'prefix'      => '/admin/taxes',
+            ],
         ],
     ],
 ];
