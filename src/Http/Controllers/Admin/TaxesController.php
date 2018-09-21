@@ -3,18 +3,28 @@
 namespace Railken\LaraOre\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Config;
-use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Tax\TaxManager;
 
-class TaxesController extends RestController
+class TaxesController extends RestConfigurableController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
     use RestTraits\RestUpdateTrait;
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
+    /**
+     * The config path.
+     *
+     * @var string
+     */
+    public $config = 'ore.tax';
 
+    /**
+     * The attributes that are queryable.
+     *
+     * @var array
+     */
     public $queryable = [
         'id',
         'name',
@@ -24,31 +34,14 @@ class TaxesController extends RestController
         'updated_at',
     ];
 
+    /**
+     * The attributes that are fillable.
+     *
+     * @var array
+     */
     public $fillable = [
         'name',
         'description',
         'calculator',
     ];
-
-    /**
-     * Construct.
-     */
-    public function __construct(TaxManager $manager)
-    {
-        $this->queryable = array_merge($this->queryable, array_keys(Config::get('ore.tax.attributes')));
-        $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.tax.attributes')));
-        $this->manager = $manager;
-        $this->manager->setAgent($this->getUser());
-        parent::__construct();
-    }
-
-    /**
-     * Create a new instance for query.
-     *
-     * @return \Illuminate\Database\Query\Builder
-     */
-    public function getQuery()
-    {
-        return $this->manager->repository->getQuery();
-    }
 }

@@ -47,11 +47,20 @@ class TaxManager extends ModelManager
      */
     public function __construct(AgentContract $agent = null)
     {
+        $this->entity = Config::get('ore.tax.entity');
         $this->attributes = array_merge($this->attributes, array_values(Config::get('ore.tax.attributes')));
-        $this->setRepository(new TaxRepository($this));
-        $this->setSerializer(new TaxSerializer($this));
-        $this->setValidator(new TaxValidator($this));
-        $this->setAuthorizer(new TaxAuthorizer($this));
+
+        $classRepository = Config::get('ore.tax.repository');
+        $this->setRepository(new $classRepository($this));
+
+        $classSerializer = Config::get('ore.tax.serializer');
+        $this->setSerializer(new $classSerializer($this));
+
+        $classAuthorizer = Config::get('ore.tax.authorizer');
+        $this->setAuthorizer(new $classAuthorizer($this));
+
+        $classValidator = Config::get('ore.tax.validator');
+        $this->setValidator(new $classValidator($this));
 
         parent::__construct($agent);
     }

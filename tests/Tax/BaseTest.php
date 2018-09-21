@@ -15,8 +15,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         $this->artisan('migrate:fresh');
-        $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\TaxServiceProvider', '--force' => true]);
-        $this->artisan('migrate');
     }
 
     protected function getPackageProviders($app)
