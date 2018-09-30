@@ -12,7 +12,7 @@ class CreateTaxesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('ore.tax.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.tax.managers.tax.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description')->nullable();
@@ -27,6 +27,6 @@ class CreateTaxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('ore.tax.table'));
+        Schema::dropIfExists(Config::get('amethyst.tax.managers.tax.table'));
     }
 }
