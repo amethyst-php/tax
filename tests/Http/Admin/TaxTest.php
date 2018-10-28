@@ -25,9 +25,9 @@ class TaxTest extends BaseTest
     protected $group = 'admin';
 
     /**
-     * Base path config.
+     * Route name.
      *
      * @var string
      */
-    protected $config = 'amethyst.tax.http.admin.tax';
+    protected $route = 'admin.tax';
 }
