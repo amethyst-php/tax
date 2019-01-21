@@ -35,11 +35,11 @@ return [
     'http' => [
         'admin' => [
             'tax' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\TaxesController::class,
-                'router'      => [
-                    'as'        => 'tax.',
-                    'prefix'    => '/taxes',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\TaxesController::class,
+                'router'     => [
+                    'as'     => 'tax.',
+                    'prefix' => '/taxes',
                 ],
             ],
         ],
