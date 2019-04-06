@@ -9,4 +9,4 @@ return [
             'description' => 'Mathematical expression used to calculate the tax'
         ]
     ]
-]
+];
