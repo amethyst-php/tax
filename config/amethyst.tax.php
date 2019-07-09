@@ -13,14 +13,14 @@ return [
         'tax' => [
             'table'      => 'amethyst_taxes',
             'comment'    => 'Taxes',
-            'model'      => Railken\Amethyst\Models\Tax::class,
-            'schema'     => Railken\Amethyst\Schemas\TaxSchema::class,
-            'repository' => Railken\Amethyst\Repositories\TaxRepository::class,
-            'serializer' => Railken\Amethyst\Serializers\TaxSerializer::class,
-            'validator'  => Railken\Amethyst\Validators\TaxValidator::class,
-            'authorizer' => Railken\Amethyst\Authorizers\TaxAuthorizer::class,
-            'faker'      => Railken\Amethyst\Fakers\TaxFaker::class,
-            'manager'    => Railken\Amethyst\Managers\TaxManager::class,
+            'model'      => Amethyst\Models\Tax::class,
+            'schema'     => Amethyst\Schemas\TaxSchema::class,
+            'repository' => Amethyst\Repositories\TaxRepository::class,
+            'serializer' => Amethyst\Serializers\TaxSerializer::class,
+            'validator'  => Amethyst\Validators\TaxValidator::class,
+            'authorizer' => Amethyst\Authorizers\TaxAuthorizer::class,
+            'faker'      => Amethyst\Fakers\TaxFaker::class,
+            'manager'    => Amethyst\Managers\TaxManager::class,
         ],
     ],
 
@@ -36,7 +36,7 @@ return [
         'admin' => [
             'tax' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\Admin\TaxesController::class,
+                'controller' => Amethyst\Http\Controllers\Admin\TaxesController::class,
                 'router'     => [
                     'as'     => 'tax.',
                     'prefix' => '/taxes',
