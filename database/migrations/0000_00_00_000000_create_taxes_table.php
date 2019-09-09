@@ -14,7 +14,7 @@ class CreateTaxesTable extends Migration
     {
         Schema::create(Config::get('amethyst.tax.data.tax.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name')->index();
             $table->text('description')->nullable();
             $table->string('calculator');
             $table->timestamps();
