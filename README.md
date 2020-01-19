@@ -1,6 +1,6 @@
 # amethyst-tax
 
-[![Build Status](https://travis-ci.org/amethyst-php/tax.svg?branch=master)](https://travis-ci.org/amethyst-php/tax)
+[![Action Status](https://github.com/amethyst-php/tax/workflows/test/badge.svg)](https://github.com/amethyst-php/tax/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
