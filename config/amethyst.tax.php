@@ -23,25 +23,4 @@ return [
             'manager'    => Amethyst\Managers\TaxManager::class,
         ],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Http configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the routes
-    |
-    */
-    'http' => [
-        'admin' => [
-            'tax' => [
-                'enabled'    => true,
-                'controller' => Amethyst\Http\Controllers\Admin\TaxesController::class,
-                'router'     => [
-                    'as'     => 'tax.',
-                    'prefix' => '/taxes',
-                ],
-            ],
-        ],
-    ],
 ];
